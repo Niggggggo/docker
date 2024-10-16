@@ -49,13 +49,13 @@ jobs:
           platforms: linux/amd64
           file: Dockerfile
           push: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.push) }}
-          tags: spacebarchat/client:latest-amd64
+          tags: niggggggo/spacebarchat-client:latest-amd64
           provenance: false
       - name: Create and push manifest images
         uses: Noelware/docker-manifest-action@master
         with:
-          inputs: spacebarchat/client:latest
-          images: spacebarchat/client:latest-amd64
+          inputs: niggggggo/spacebarchat-client:latest
+          images: niggggggo/spacebarchat-client:latest-amd64
           push: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.push) }}
           amend: true
 
@@ -80,7 +80,7 @@ jobs:
           platforms: linux/arm/v7
           file: Dockerfile
           push: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.push) }}
-          tags: spacebarchat/client:latest-armv7
+          tags: niggggggo/spacebarchat-client:latest-armv7
           provenance: false
       - name: Build and push arm64
         uses: docker/build-push-action@v4
@@ -89,5 +89,5 @@ jobs:
           platforms: linux/arm64
           file: Dockerfile
           push: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.push) }}
-          tags: spacebarchat/client:latest-arm64
+          tags: niggggggo/spacebarchat-client:latest-arm64
           provenance: false
